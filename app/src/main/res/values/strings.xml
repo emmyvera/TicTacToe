@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="first_human">You go first</string>
+    <string name="turn_human">Your Turn</string>
+    <string name="turn_computer">Andy\'s turn</string>
+    <string name="result_tie">It\'s a tie!</string>
+    <string name="result_human_win">You Won!</string>
+    <string name="result_computer_win">Andy Won!</string>
+    <string name="info">Info</string>
+    <string name="human"><b>You </b> </string>
+    <string name="Ties"><b>Ties </b></string>
+    <string name="reset">Reset</string>
+    <string name="computer"><b>Andy</b></string>
+    <string name="name"><b>Name \n</b>Emmanuel Dev</string>
+    <string name="email"><b>Email \n</b>emmyvera01@gmail.com</string>
+    <string name="comingSoon">Coming Soon !!!</string>
+    <string name="appreciation"><b>Appreciation \n</b>
+    Thank you Andela\n
+    Thank you Udacity\n
+    Thank you Google\n
+    For giving me this opportunity to learn from the best of the best.\n
+    Really Appreciate!\n
+    Love to learn more!!\n
+    #TIA\n
+    #ALCNigeriaWithGoogle\n
+    Thanks Indie Development\n
+    Thanks Stack Overflow\n
+    Thanks Friends and Family\n
+    Love You All!!!
+    </string>
+
+    <string name="about"><b>About\n </b>
+    This app allows you to play a game
+    of tic tac toe against Andy (the computer).\n
+    The rounds will rotate who gets to play first.\n
+    Also the app keeps track of scores!</string>
+
+</resources>
