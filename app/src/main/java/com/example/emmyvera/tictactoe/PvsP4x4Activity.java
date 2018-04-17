@@ -18,6 +18,8 @@ public class PvsP4x4Activity extends AppCompatActivity {
     private TextView playerXScore;
     private TextView tieScore;
     private TextView playerOScore;
+    private TextView xturn;
+    private TextView oturn;
 
     private int xScore = 0;
     private int tScore = 0;
@@ -63,6 +65,9 @@ public class PvsP4x4Activity extends AppCompatActivity {
 
         mGame = new TicTacToe_4();
 
+        xturn = (TextView)findViewById(R.id.xTurn);
+        oturn = (TextView)findViewById(R.id.oTurn);
+
         startGame();
 
         
@@ -104,11 +109,15 @@ public class PvsP4x4Activity extends AppCompatActivity {
                     if (winner == 0){
                         if (humanFirst){
                             setMove(mGame.playerX,location);
+                            oturn.setVisibility(View.VISIBLE);
+                            xturn.setVisibility(View.INVISIBLE);
                             humanFirst = false;
 
                         }else {
 
                             setMove(mGame.playerO,location );
+                            xturn.setVisibility(View.VISIBLE);
+                            oturn.setVisibility(View.INVISIBLE);
                             humanFirst = true;
                         }
                         winner = mGame.checkForWinning();
@@ -132,11 +141,11 @@ public class PvsP4x4Activity extends AppCompatActivity {
 
                     if (gameOver){
                         if (winner == 2){
-                            Toast.makeText(getApplicationContext(), "You Won", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Player X Won", Toast.LENGTH_SHORT).show();
                         }
 
                         if (winner == 3){
-                            Toast.makeText(getApplicationContext(),"Andy Won",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Player O Won",Toast.LENGTH_SHORT).show();
                         }
 
                         if (winner == 1){
@@ -167,5 +176,15 @@ public class PvsP4x4Activity extends AppCompatActivity {
             mBoardButtons[location].setTextColor(Color.BLUE);
         else
             mBoardButtons[location].setTextColor(Color.RED);
+    }
+
+    public void reset(View view){
+        xScore = 0;
+        oScore = 0;
+        tScore = 0;
+        playerXScore.setText(Integer.toString(xScore));
+        tieScore.setText(Integer.toString(tScore));
+        playerOScore.setText(Integer.toString(oScore));
+        startGame();
     }
 }
