@@ -15,28 +15,27 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TicTacToe mGame;
-    private Button mBoardButtons[];
 
-    private TextView humanScore;
-    private TextView tieScore;
-    private TextView andyScore;
-
-    private int hScore = 0;
-    private int tScore = 0;
-    private int aScore = 0;
-
-    private boolean humanFirst = true;
-    private boolean gameOver = false;
 
     private LinearLayout next;
     private LinearLayout first;
 
+
+    /**
+     * This enable the activity move to another on the player vs computer section
+     * It allows the user to select either the 3*3, 4*4, or 5*5 board sizes
+     * @param view
+     */
     public void nextPage(View view){
         first.setVisibility(View.GONE);
         next.setVisibility(View.VISIBLE);
 
     }
+
+    /**
+     * It allows the user to begin the 3*3 TicTacToe game with the computer
+     * @param view
+     */
 
     public void startGame3(View view){
 
@@ -45,11 +44,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * It allows the user to begin the 4*4 TicTacToe game with the computer
+     * @param view
+     */
+
     public void startGame4(View view){
 
         Intent n = new Intent(getApplicationContext(), Main3Activity.class);
         startActivity(n);
     }
+
+    /**
+     * It allows the user to begin the 5*5 TicTacToe game with the computer
+     * @param view
+     */
 
     public void startGame5(View view){
 
@@ -57,11 +66,22 @@ public class MainActivity extends AppCompatActivity {
         startActivity(f);
     }
 
+    /**
+     * This shows the activity where the name, email, appreciation and about the game section is
+     * @param view
+     */
+
     public void credit(View view){
         Intent t = new Intent(getApplicationContext(), Main4Activity.class);
         startActivity(t);
 
     }
+
+    /**
+     * Well this method was use earlier but is no more in use
+     * It shows the coming soon activity
+     * @param view
+     */
 
     public void comingSoon(View view){
         Intent h = new Intent(getApplicationContext(), ComingSoonActivity.class);
@@ -70,13 +90,26 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    /**
+     * This enable the activity move to another on the player vs player section
+     * It allows the user to select either the 3*3, 4*4, or 5*5 board sizes
+     * Users can play with other user
+     * @param view
+     */
+
+    public void playerVsPlayer(View view){
+        Intent p = new Intent(getApplicationContext(), PvsPActivity.class);
+        startActivity(p);
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        next = (LinearLayout)findViewById(R.id.nextPage);
-        first = (LinearLayout)findViewById(R.id.firstPage);
+        next = (LinearLayout)findViewById(R.id.nextPage); // Allow the user to select different board sizes in the player vs computer section
+        first = (LinearLayout)findViewById(R.id.firstPage); // Contain the player vs player, player vs computer and credit
     }
 }

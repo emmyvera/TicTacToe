@@ -6,39 +6,33 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Thanks Immanuel
- * Thanks Faithfulness
- */
+public class PvsP4x4Activity extends AppCompatActivity {
 
-
-public class Main2Activity extends AppCompatActivity {
-
-    private TicTacToe mGame;
+    private TicTacToe_4 mGame;
     private Button mBoardButtons[];
 
-    private TextView humanScore;
+    private TextView playerXScore;
     private TextView tieScore;
-    private TextView andyScore;
+    private TextView playerOScore;
 
-    private int hScore = 0;
+    private int xScore = 0;
     private int tScore = 0;
-    private int aScore = 0;
+    private int oScore = 0;
 
     private boolean humanFirst = true;
     private boolean gameOver = false;
 
+    private boolean nextMove = true;
+
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-
-        /**
-         * Here we define each button and assign it to the array of the board size
-         */
+        setContentView(R.layout.activity_pvs_p4x4);
 
         mBoardButtons = new Button[mGame.getBoardSize()];
         mBoardButtons[0] = (Button)findViewById(R.id.b0);
@@ -50,30 +44,29 @@ public class Main2Activity extends AppCompatActivity {
         mBoardButtons[6] = (Button)findViewById(R.id.b6);
         mBoardButtons[7] = (Button)findViewById(R.id.b7);
         mBoardButtons[8] = (Button)findViewById(R.id.b8);
+        mBoardButtons[9] = (Button)findViewById(R.id.b9);
+        mBoardButtons[10] = (Button)findViewById(R.id.b10);
+        mBoardButtons[11] = (Button)findViewById(R.id.b11);
+        mBoardButtons[12] = (Button)findViewById(R.id.b12);
+        mBoardButtons[13] = (Button)findViewById(R.id.b13);
+        mBoardButtons[14] = (Button)findViewById(R.id.b14);
+        mBoardButtons[15] = (Button)findViewById(R.id.b15);
 
-        // define the score textviews
-        humanScore = (TextView)findViewById(R.id.humanScore);
+        playerXScore = (TextView)findViewById(R.id.playerXScore);
         tieScore = (TextView)findViewById(R.id.tiesScore);
-        andyScore = (TextView)findViewById(R.id.andyScore);
+        playerOScore = (TextView)findViewById(R.id.playerOScore);
 
-        // Keeps updating the scores
-        //humanScore.setText(String.valueOf(hScore));
-        humanScore.setText(Integer.toString(hScore));
+        //playerXScore.setText(String.valueOf(xScore));
+        playerXScore.setText(Integer.toString(xScore));
         tieScore.setText(Integer.toString(tScore));
-        andyScore.setText(Integer.toString(aScore));
+        playerOScore.setText(Integer.toString(oScore));
 
-        mGame = new TicTacToe();
+        mGame = new TicTacToe_4();
 
         startGame();
 
-
-
+        
     }
-
-    /**
-     * Allow the user to begin the game
-     * @startGame()
-     */
 
     private void startGame(){
         mGame.clearBoard();
@@ -87,21 +80,15 @@ public class Main2Activity extends AppCompatActivity {
         }
 
         if (humanFirst){
-            humanFirst = false;
-        }else {
-            int move = mGame.getComputerMove();
-            setMove(mGame.computerPlayer, move);
             humanFirst = true;
+
+        }else {
+
+            humanFirst = false;
         }
 
         gameOver = false;
-
     }
-
-    /**
-     * Here we assign an onClick listener on each button
-     *
-     */
 
     private class ButtonClickListener implements View.OnClickListener{
         int location;
@@ -112,54 +99,49 @@ public class Main2Activity extends AppCompatActivity {
         public void onClick(View view){
             if (!gameOver){
                 if (mBoardButtons[location].isEnabled()){
-                    setMove(mGame.humanPlayer, location);
+
                     int winner = mGame.checkForWinning();
                     if (winner == 0){
-                        int move = mGame.getComputerMove();
-                        setMove(mGame.computerPlayer, move);
+                        if (humanFirst){
+                            setMove(mGame.playerX,location);
+                            humanFirst = false;
+
+                        }else {
+
+                            setMove(mGame.playerO,location );
+                            humanFirst = true;
+                        }
                         winner = mGame.checkForWinning();
-
                     }
-                    // if it a draw
-                   if (winner == 1){
 
+                    if (winner == 1){
                         tScore++;
                         tieScore.setText(Integer.toString(tScore));
                         gameOver = true;
-
                     }
-                    // if user wins
                     else if (winner == 2){
-                        hScore++;
-                        humanScore.setText(Integer.toString(hScore));
+                        xScore++;
+                        playerXScore.setText(Integer.toString(xScore));
                         gameOver = true;
-
                     }
-                    //if computer wins
                     else if (winner == 3){
-                        aScore++;
-                        andyScore.setText(Integer.toString(aScore));
+                        oScore++;
+                        playerOScore.setText(Integer.toString(oScore));
                         gameOver = true;
-
                     }
 
                     if (gameOver){
-                        // if user wins!
                         if (winner == 2){
                             Toast.makeText(getApplicationContext(), "You Won", Toast.LENGTH_SHORT).show();
                         }
 
-                        // if computer wins!
                         if (winner == 3){
                             Toast.makeText(getApplicationContext(),"Andy Won",Toast.LENGTH_SHORT).show();
                         }
 
-                        // if it a draw
                         if (winner == 1){
-                            Toast.makeText(getApplicationContext(), "It's a Draw",Toast.LENGTH_SHORT).show();
-
+                            Toast.makeText(getApplicationContext(),"It's a Draw",Toast.LENGTH_SHORT).show();
                         }
-                        // wait for 3 seconds before moving starting a new game
                         Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {
                             @Override
@@ -167,7 +149,6 @@ public class Main2Activity extends AppCompatActivity {
                                 startGame();
                             }
                         }, 3000);
-
                     }
 
                 }
@@ -177,35 +158,14 @@ public class Main2Activity extends AppCompatActivity {
         }
     }
 
-    /**
-     * This get the current player playing and assign the variable(char) on the button
-     * location here is the int that I create in the array (which is linked to each button)
-     * @param player
-     * @param location
-     */
 
     private void setMove(char player, int location){
         mGame.setMove(player, location);
         mBoardButtons[location].setEnabled(false);
         mBoardButtons[location].setText(String.valueOf(player));
-        if (player == mGame.computerPlayer)
+        if (player == mGame.playerO)
             mBoardButtons[location].setTextColor(Color.BLUE);
         else
             mBoardButtons[location].setTextColor(Color.RED);
-    }
-
-    /**
-     * Reset the whole game
-     * @param view
-     */
-
-    public void reset(View view){
-        aScore = 0;
-        hScore = 0;
-        tScore = 0;
-        andyScore.setText(Integer.toString(aScore));
-        tieScore.setText(Integer.toString(tScore));
-        humanScore.setText(Integer.toString(hScore));
-        startGame();
     }
 }

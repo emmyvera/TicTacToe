@@ -8,6 +8,11 @@ import java.util.Random;
  * Created by EmmyVera on 3/31/2018.
  */
 
+/**
+ * Note: Almost all or All the Comment on TicTacToe.java applies here
+ * There are just few adjustment (esp in the checkForWinning() method)
+ */
+
 public class TicTacToe_five {
 
     private char mBoard[];

@@ -11,6 +11,10 @@
     <string name="Ties"><b>Ties </b></string>
     <string name="reset">Reset</string>
     <string name="computer"><b>Andy</b></string>
+    <string name="playerX"><b>Player X</b></string>
+    <string name="playerO"><b>Player O</b></string>
+    <string name="xTurn">X\'s Turn</string>
+    <string name="oTurn">O\'s Turn</string>
     <string name="name"><b>Name \n</b>Emmanuel Dev</string>
     <string name="email"><b>Email \n</b>emmyvera01@gmail.com</string>
     <string name="comingSoon">Coming Soon !!!</string>
@@ -33,6 +37,9 @@
     This app allows you to play a game
     of tic tac toe against Andy (the computer).\n
     The rounds will rotate who gets to play first.\n
-    Also the app keeps track of scores!</string>
+    Also the app keeps track of scores!\n
+    This app also allows user to play against another user\n
+    The round also rotate who gets to play first\n
+    Enjoy!!!</string>
 
 </resources>

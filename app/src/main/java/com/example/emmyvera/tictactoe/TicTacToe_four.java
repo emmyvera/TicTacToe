@@ -8,6 +8,11 @@ import java.util.Random;
  * Created by EmmyVera on 3/31/2018.
  */
 
+/**
+ * Note: Almost all or All the Comment on TicTacToe.java applies here
+ * There are just few adjustment (esp in the checkForWinning() method)
+ */
+
 public class TicTacToe_four {
 
     private char mBoard[];
@@ -16,6 +21,7 @@ public class TicTacToe_four {
     public static final char humanPlayer = 'X';
     public static final char computerPlayer = 'O';
     public static final char emptySpace = ' ';
+    public static final char playerO = 'O';
 
     private Random random;
 

@@ -8,6 +8,8 @@ import java.util.Random;
  * Created by EmmyVera on 3/31/2018.
  */
 
+
+
 public class TicTacToe {
 
     private char mBoard[];
@@ -35,6 +37,8 @@ public class TicTacToe {
 
     }
 
+
+
     public void clearBoard(){
 
         for (int i =0; i < boardSize; i++) {
@@ -47,9 +51,15 @@ public class TicTacToe {
         mBoard[location] = player;
     }
 
+    /**
+     * Define Computer moves
+     * @return
+     */
+
     public int getComputerMove(){
         int move;
 
+        // Look for it winning move
         for (int i = 0; i < getBoardSize(); i++) {
             if (mBoard[i] != humanPlayer && mBoard[i] != computerPlayer) {
                 char curr = mBoard[i];
@@ -62,6 +72,7 @@ public class TicTacToe {
 
             }
         }
+            //To blocks opponent's move
             for (int i = 0; i < getBoardSize(); i++){
                 if (mBoard[i] != humanPlayer && mBoard[i] != computerPlayer){
                     char curr = mBoard[i];
@@ -83,6 +94,15 @@ public class TicTacToe {
         setMove(computerPlayer, move);
         return move;
     }
+
+    /**
+     * Define the winning moves for both user and computer then return a value
+     * 0 for the game is till on
+     * 1 for draw
+     * 2 for user
+     * 3 for computer (andy)
+     * @return
+     */
 
     public int checkForWinning(){
 
@@ -134,7 +154,8 @@ public class TicTacToe {
             if (mBoard[i] != humanPlayer && mBoard[i] != computerPlayer)
                 return 0;
         }
-        return 1;
+
+        return 1; // for ties
     }
 
 }

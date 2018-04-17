@@ -20,7 +20,10 @@
         <activity android:name=".Main3Activity" />
         <activity android:name=".Main4Activity" />
         <activity android:name=".Main5Activity" />
-        <activity android:name=".ComingSoonActivity"></activity>
+        <activity android:name=".ComingSoonActivity" />
+        <activity android:name=".PvsPActivity" />
+        <activity android:name=".PvsP3x3Activity" />
+        <activity android:name=".PvsP4x4Activity"></activity>
     </application>
 
 </manifest>

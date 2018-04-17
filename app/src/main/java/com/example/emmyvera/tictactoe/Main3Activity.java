@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Note: Almost all or All the Comment on Main2Activity.java applies here
+ */
+
 public class Main3Activity extends AppCompatActivity {
 
     private TicTacToe_four mGame;

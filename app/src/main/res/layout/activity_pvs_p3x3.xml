@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context="com.example.emmyvera.tictactoe.PvsP3x3Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:weightSum="3"
+        android:background="@color/myBlue">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="@string/playerX"
+                android:gravity="center"
+                android:textColor="@color/myGrey"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/playerXScore"
+                android:textSize="24sp"
+                android:text="0"
+                android:gravity="center"
+                android:textColor="@color/myGrey"
+                />
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="@string/playerO"
+                android:gravity="center"
+                android:textColor="@color/myGrey"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:id="@+id/playerOScore"
+                android:text="0"
+                android:gravity="center"
+                android:textColor="@color/myGrey"
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="12dp"
+        android:layout_marginTop="8dp">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="3"
+            android:rowCount="3"
+            android:alignmentMode="alignMargins"
+            android:id="@+id/gripLayout">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:id="@+id/b0"
+                android:textSize="56sp"
+                android:tag="0"
+                android:onClick="buttonClicked"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:textSize="56sp"
+                android:layout_margin="8dp"
+                android:id="@+id/b1"
+                android:onClick="buttonClicked"
+                android:tag="1"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:id="@+id/b2"
+                android:textSize="56sp"
+                android:tag="2"
+                android:onClick="buttonClicked"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:textSize="56sp"
+                android:id="@+id/b3"
+                android:tag="3"
+                android:onClick="buttonClicked"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:textSize="56sp"
+                android:id="@+id/b4"
+                android:tag="4"
+                android:onClick="buttonClicked"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:id="@+id/b5"
+                android:textSize="56sp"
+                android:tag="5"
+                android:onClick="buttonClicked"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:textSize="56sp"
+                android:layout_margin="8dp"
+                android:id="@+id/b6"
+                android:tag="6"
+                android:onClick="buttonClicked"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:id="@+id/b7"
+                android:textSize="56sp"
+                android:tag="7"
+                android:onClick="buttonClicked"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:id="@+id/b8"
+                android:textSize="56sp"
+                android:tag="8"
+                android:onClick="buttonClicked"
+                />
+
+
+        </GridLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:weightSum="3"
+       android:layout_marginBottom="8dp">
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:text="@string/xTurn"
+           android:gravity="center"
+           android:textSize="16sp"
+           android:layout_margin="8dp"
+           android:id="@+id/xTurn"
+           android:visibility="invisible"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/reset"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"
+        android:onClick="reset"
+        android:background="@color/myBlue"
+        android:textColor="@color/myGrey"/>
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:text="@string/oTurn"
+           android:gravity="center"
+           android:textSize="16sp"
+           android:layout_margin="8dp"
+           android:id="@+id/oTurn"
+           android:visibility="invisible"/>
+
+   </LinearLayout>
+
+</LinearLayout>

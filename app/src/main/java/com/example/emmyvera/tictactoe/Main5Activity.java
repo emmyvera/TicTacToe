@@ -9,6 +9,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Note: Almost all or All the Comment on Main2Activity.java applies here
+ * There are just few adjustment
+ */
+
 public class Main5Activity extends AppCompatActivity {
 
     private TicTacToe_five mGame;
