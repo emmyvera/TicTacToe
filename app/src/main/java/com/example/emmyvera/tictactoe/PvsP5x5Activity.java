@@ -6,13 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class PvsP4x4Activity extends AppCompatActivity {
+public class PvsP5x5Activity extends AppCompatActivity {
 
-    private TicTacToe_4 mGame;
+    private TicTacToe_5 mGame;
     private Button mBoardButtons[];
 
     private TextView playerXScore;
@@ -28,12 +27,10 @@ public class PvsP4x4Activity extends AppCompatActivity {
     private boolean humanFirst = true;
     private boolean gameOver = false;
 
-
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pvs_p4x4);
+        setContentView(R.layout.activity_pvs_p5x5);
 
         mBoardButtons = new Button[mGame.getBoardSize()];
         mBoardButtons[0] = (Button)findViewById(R.id.b0);
@@ -52,6 +49,15 @@ public class PvsP4x4Activity extends AppCompatActivity {
         mBoardButtons[13] = (Button)findViewById(R.id.b13);
         mBoardButtons[14] = (Button)findViewById(R.id.b14);
         mBoardButtons[15] = (Button)findViewById(R.id.b15);
+        mBoardButtons[16] = (Button)findViewById(R.id.b16);
+        mBoardButtons[17] = (Button)findViewById(R.id.b17);
+        mBoardButtons[18] = (Button)findViewById(R.id.b18);
+        mBoardButtons[19] = (Button)findViewById(R.id.b19);
+        mBoardButtons[20] = (Button)findViewById(R.id.b20);
+        mBoardButtons[21] = (Button)findViewById(R.id.b21);
+        mBoardButtons[22] = (Button)findViewById(R.id.b22);
+        mBoardButtons[23] = (Button)findViewById(R.id.b23);
+        mBoardButtons[24] = (Button)findViewById(R.id.b24);
 
         playerXScore = (TextView)findViewById(R.id.playerXScore);
         tieScore = (TextView)findViewById(R.id.tiesScore);
@@ -62,14 +68,13 @@ public class PvsP4x4Activity extends AppCompatActivity {
         tieScore.setText(Integer.toString(tScore));
         playerOScore.setText(Integer.toString(oScore));
 
-        mGame = new TicTacToe_4();
+        mGame = new TicTacToe_5();
 
         xturn = (TextView)findViewById(R.id.xTurn);
         oturn = (TextView)findViewById(R.id.oTurn);
 
         startGame();
 
-        
     }
 
     private void startGame(){
@@ -186,4 +191,5 @@ public class PvsP4x4Activity extends AppCompatActivity {
         playerOScore.setText(Integer.toString(oScore));
         startGame();
     }
+
 }

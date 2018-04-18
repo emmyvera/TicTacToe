@@ -8,13 +8,18 @@ import android.view.View;
 public class PvsPActivity extends AppCompatActivity {
 
     public void startGame3(View view){
-        Intent i = new Intent(getApplicationContext(), PvsP3x3Activity.class);
-        startActivity(i);
+        Intent iii = new Intent(getApplicationContext(), PvsP3x3Activity.class);
+        startActivity(iii);
     }
 
     public void startGame4(View view){
-        Intent f = new Intent(getApplicationContext(), PvsP4x4Activity.class);
-        startActivity(f);
+        Intent iv = new Intent(getApplicationContext(), PvsP4x4Activity.class);
+        startActivity(iv);
+    }
+
+    public void startGame5(View view){
+        Intent v = new Intent(getApplicationContext(), PvsP5x5Activity.class);
+        startActivity(v);
     }
 
     @Override

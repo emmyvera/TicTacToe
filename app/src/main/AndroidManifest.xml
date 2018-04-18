@@ -23,7 +23,8 @@
         <activity android:name=".ComingSoonActivity" />
         <activity android:name=".PvsPActivity" />
         <activity android:name=".PvsP3x3Activity" />
-        <activity android:name=".PvsP4x4Activity"></activity>
+        <activity android:name=".PvsP4x4Activity" />
+        <activity android:name=".PvsP5x5Activity"></activity>
     </application>
 
 </manifest>

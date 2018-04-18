@@ -12,6 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * In this code, here I tried to use a different approach!
+ */
+
 public class PvsP3x3Activity extends AppCompatActivity {
 
     // When active player is equal to 0 nut drops, when equal to 1 cross drops
